@@ -24,7 +24,7 @@ A comprehensive lead management application built with modern web technologies, 
 - [Author](#author)
 - [License](#license)
 
-## 🌟 Overview
+## Overview
 
 Lead Management Dashboard is a feature-rich lead management platform that empowers sales teams to manage their workflow effectively. The application combines a clean, intuitive user interface with robust backend infrastructure to provide a seamless lead management experience. Users can create, organize, filter, search, and analyze their leads with ease, while administrators have full control over the platform.
 
@@ -36,9 +36,9 @@ Lead Management Dashboard is a feature-rich lead management platform that empowe
 - **Bulk Operations** - Select multiple leads and perform batch actions
 - **Lead Analytics** - View real-time analytics dashboard with performance tracking
 
-## ✨ Features
+## Features
 
-### 📋 Lead Management
+### Lead Management
 
 **Create & Organize Leads**
 - Add new leads with a simple, intuitive input form
@@ -59,7 +59,7 @@ Lead Management Dashboard is a feature-rich lead management platform that empowe
 - Active filter indicator showing current filter state
 - Smooth transitions when switching between filter views
 
-### 🔍 Search & Organization
+### Search & Organization
 
 **Real-time Search**
 - Instant search filtering as you type lead names
@@ -76,7 +76,7 @@ Lead Management Dashboard is a feature-rich lead management platform that empowe
 - **High Priority First** - Group high priority leads at top
 - **Recently Updated** - Sort by last modification date
 
-### 📊 Analytics Dashboard
+### Analytics Dashboard
 
 **Real-time Analytics**
 - **Total Leads** - Count of all leads in the system
@@ -91,7 +91,7 @@ Lead Management Dashboard is a feature-rich lead management platform that empowe
 - Color-coded analytics based on performance metrics
 - Real-time updates reflecting lead changes
 
-### ✅ Bulk Operations
+### Bulk Operations
 
 **Multiple Lead Selection**
 - Individual lead checkboxes for selective operations
@@ -118,7 +118,7 @@ Lead Management Dashboard is a feature-rich lead management platform that empowe
 - Animated transitions between states
 - Empty state message when no leads exist
 
-## ⚙️ Tech Stack
+## Tech Stack
 
 ### Frontend Architecture
 
@@ -210,7 +210,7 @@ Lead Management Dashboard is a feature-rich lead management platform that empowe
 - Separate development and production configurations
 - Safe credential management without exposing secrets
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Lead-Management-Dashboard/
@@ -273,7 +273,7 @@ Lead-Management-Dashboard/
 └── LICENSE                               # MIT license file
 ```
 
-## 🚀 Installation
+## Installation
 
 ### Prerequisites
 
@@ -362,7 +362,7 @@ http://localhost:5173
 
 The application should load with the full lead management interface ready to use.
 
-## 🎮 Usage
+## Usage
 
 ### For Users
 
@@ -444,7 +444,7 @@ git push origin feature/amazing-feature
 - Update documentation for new features
 - Ensure no sensitive information in commits
 
-## 👤 Author
+## Author
 
 **Designed and Developed with 💖 by Arpita Singh**
 
@@ -456,6 +456,6 @@ git push origin feature/amazing-feature
 
 📬 Feel free to reach out for questions, suggestions, or collaboration opportunities!
 
-## 📄 License
+## License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for complete details.

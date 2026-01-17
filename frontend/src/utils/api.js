@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create axios instance with base URL pointing to backend API
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -22,7 +22,7 @@ api.interceptors.request.use(
   }
 );
 
-// Add response interceptor to handle auth errors
+// Add response interceptor to handle auth errors and connection issues
 api.interceptors.response.use(
   (response) => response,
   (error) => {
@@ -31,6 +31,14 @@ api.interceptors.response.use(
       localStorage.removeItem('token');
       localStorage.removeItem('user');
       window.location.href = '/login';
+    } else if (!error.response) {
+      // Handle network/connection errors
+      console.error('Connection Error:', error.message);
+      const connectionError = new Error(
+        'Could not connect to server. Please check if the backend is running and the API URL is correct.'
+      );
+      connectionError.code = 'NETWORK_ERROR';
+      return Promise.reject(connectionError);
     }
     return Promise.reject(error);
   }

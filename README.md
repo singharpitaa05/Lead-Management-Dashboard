@@ -14,9 +14,9 @@ A comprehensive lead management application built with modern web technologies, 
 
 ## 📋 Table of Contents
 
-- [Overview](#-overview)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
 - [Project Structure](#-project-structure)
 - [Installation](#-installation)
 - [Usage](#-usage)

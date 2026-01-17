@@ -2,7 +2,7 @@
 
 A comprehensive lead management application built with modern web technologies, designed to help users efficiently organize, track, and manage their sales leads with advanced features like real-time analytics, lead scoring, and performance tracking.
 
- [Quick Start](#installation) | 🎯 [Features](#-features) | 💻 [Tech Stack](#-tech-stack)
+ [Quick Start](#installation) | 🎯 [Features](#features) | 💻 [Tech Stack](#tech-stack)
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green?logo=node.js)](https://nodejs.org/)
@@ -17,12 +17,12 @@ A comprehensive lead management application built with modern web technologies, 
 - [Overview](#overview)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
-- [Project Structure](#-project-structure)
-- [Installation](#-installation)
-- [Usage](#-usage)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Usage](#usage)
 - [How to Contribute](#how-to-contribute)
-- [Author](#-author)
-- [License](#-license)
+- [Author](#author)
+- [License](#license)
 
 ## 🌟 Overview
 

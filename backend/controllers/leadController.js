@@ -43,19 +43,69 @@ export const createLead = async (req, res) => {
   }
 };
 
-// @desc    Get all leads (will add search, filter, sort, pagination in Phase 3)
+// @desc    Get all leads with search, filter, sort, and pagination
 // @route   GET /api/leads
 // @access  Private
 export const getLeads = async (req, res) => {
   try {
-    // Basic fetch - will enhance in Phase 3
-    const leads = await Lead.find({ createdBy: req.user._id })
-      .sort({ createdAt: -1 }) // Latest first
-      .limit(50); // Limit for now
+    // Extract query parameters
+    const {
+      search = '',
+      status = '',
+      source = '',
+      sortBy = 'createdAt',
+      sortOrder = 'desc',
+      page = 1,
+      limit = 10,
+    } = req.query;
+
+    // Build query object - start with user's leads only
+    const query = { createdBy: req.user._id };
+
+    // Search: by name, email, or company (case-insensitive)
+    if (search) {
+      query.$or = [
+        { name: { $regex: search, $options: 'i' } },
+        { email: { $regex: search, $options: 'i' } },
+        { company: { $regex: search, $options: 'i' } },
+      ];
+    }
+
+    // Filter by status
+    if (status) {
+      query.leadStatus = status;
+    }
+
+    // Filter by source
+    if (source) {
+      query.leadSource = source;
+    }
+
+    // Calculate pagination
+    const pageNum = parseInt(page, 10);
+    const limitNum = parseInt(limit, 10);
+    const skip = (pageNum - 1) * limitNum;
+
+    // Build sort object
+    const sort = {};
+    sort[sortBy] = sortOrder === 'asc' ? 1 : -1;
+
+    // Execute query with pagination
+    const leads = await Lead.find(query)
+      .sort(sort)
+      .skip(skip)
+      .limit(limitNum);
+
+    // Get total count for pagination
+    const totalLeads = await Lead.countDocuments(query);
+    const totalPages = Math.ceil(totalLeads / limitNum);
 
     res.status(200).json({
       success: true,
       count: leads.length,
+      total: totalLeads,
+      page: pageNum,
+      totalPages,
       data: leads,
     });
   } catch (error) {

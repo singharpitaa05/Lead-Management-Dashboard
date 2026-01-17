@@ -4,6 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
 import connectDB from './config/db.js';
+import analyticsRoutes from './routes/analyticsRoutes.js';
 import authRoutes from './routes/authRoutes.js';
 import leadRoutes from './routes/leadRoutes.js';
 
@@ -23,6 +24,7 @@ app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 // Routes
 app.use('/api/auth', authRoutes); // Authentication routes
 app.use('/api/leads', leadRoutes); // Lead management routes
+app.use('/api/analytics', analyticsRoutes); // Analytics routes
 
 // Health check route
 app.get('/api/health', (req, res) => {

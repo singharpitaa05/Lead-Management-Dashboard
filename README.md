@@ -451,8 +451,8 @@ git push origin feature/amazing-feature
 ### 🔗 Connect with us:
 
 - **📧 Email** - [your-email@example.com](mailto:singharpita.05march@gmail.com)
-- **💼 LinkedIn** - [Your Profile](https://www.linkedin.com/in/singharpita.05march@gmail.com)
-- **🐙 GitHub** - [Your GitHub](https://github.com/singharpita.05march@gmail.com)
+- **💼 LinkedIn** - [Your Profile](https://www.linkedin.com/in/singharpitaa05)
+- **🐙 GitHub** - [Your GitHub](https://github.com/singharpitaa05)
 
 📬 Feel free to reach out for questions, suggestions, or collaboration opportunities!
 

@@ -3,10 +3,16 @@
 import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import connectDB from './config/db.js';
 import analyticsRoutes from './routes/analyticsRoutes.js';
 import authRoutes from './routes/authRoutes.js';
 import leadRoutes from './routes/leadRoutes.js';
+
+// Get __dirname in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Load environment variables
 dotenv.config();
@@ -30,6 +36,15 @@ app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 app.use('/api/auth', authRoutes); // Authentication routes
 app.use('/api/leads', leadRoutes); // Lead management routes
 app.use('/api/analytics', analyticsRoutes); // Analytics routes
+
+// Serve static files from React build
+const frontendBuildPath = path.join(__dirname, '../frontend/dist');
+app.use(express.static(frontendBuildPath));
+
+// Fallback route for React SPA (client-side routing)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(frontendBuildPath, 'index.html'));
+});
 
 // Health check route
 app.get('/api/health', (req, res) => {
